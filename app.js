@@ -20,6 +20,7 @@ const port = process.env.PORT || config.get("port");
 app.get('/', function (req, res) {
   res.send('Welcome to the default page!  <br> <br>' +
     'Try going to different URIs by adding these at the end: <br> <br>' +
+    '/chen <br>' +
     '/hello <br>' +
     '/big <br>' +
     '/json <br>' +
@@ -63,6 +64,10 @@ app.get('/fancy', (req, res) => {
   const first = req.query.first
   const last = req.query.last
   res.send(`Hello ${first} ${last}!`)
+})
+
+app.get('/chen',(req,res)=>{
+  res.send('Greeting from Chen!')
 })
 
 let fortunes = ['It is certain.', 'It is decidedly so.', 'Without a doubt.', 'Yes - definitely.',
